@@ -1,0 +1,6 @@
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+ # mysql-url: 'mysql://dummy:dummy@mysql/fitness'
+  mysql-url: 'mysql://dummy:dummy@ak-fitness-db.cq174vfsoqja.us-east-1.rds.amazonaws.com/fitness'
