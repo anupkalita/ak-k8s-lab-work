@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  labels:
+    app: webapp
+spec:
+  selector:
+    matchLabels:
+      app: webapp
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - image: anup10/fitness-app
+        name: webapp
+        ports:
+        - containerPort: 80
+          name: webapp
+        env:
+        - name: DATABASE_URI
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config
+              key: mysql-url

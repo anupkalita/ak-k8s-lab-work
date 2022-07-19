@@ -1,0 +1,5 @@
+commonLabels:
+  app: webapp
+bases:
+- ./mysql
+- ./webapp
